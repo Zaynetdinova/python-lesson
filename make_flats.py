@@ -1,0 +1,20 @@
+# Создаёт flats.json с данными для урока 6
+import json
+
+flats = [
+    {"complex": "ЖК Цветы",       "price": 5100000, "area": 42.5, "rooms": 1, "district": "Кировский"},
+    {"complex": "ЖК Парк",        "price": 3900000, "area": 31.0, "rooms": 0, "district": "Дёмский"},
+    {"complex": "ЖК Le Cristall", "price": 7000000, "area": 27.0, "rooms": 0, "district": "Советский"},
+    {"complex": "ЖК Premium",     "price": 8000000, "area": 35.0, "rooms": 1, "district": "Советский"},
+    {"complex": "ЖК Life",        "price": 3900000, "area": 30.0, "rooms": 0, "district": "Дёмский"},
+    {"complex": "ЖК Речной",      "price": 6200000, "area": 55.0, "rooms": 2, "district": "Кировский"},
+    {"complex": "ЖК Солнечный",   "price": 4500000, "area": 38.0, "rooms": 1, "district": "Ленинский"},
+    {"complex": "ЖК Центральный", "price": 9800000, "area": 62.0, "rooms": 2, "district": "Советский"},
+    {"complex": "ЖК Северный",    "price": 5600000, "area": 48.0, "rooms": 1, "district": "Калининский"},
+    {"complex": "ЖК Семейный",    "price": 8200000, "area": 72.0, "rooms": 3, "district": "Октябрьский"},
+]
+
+with open("flats.json", "w", encoding="utf-8") as f:
+    json.dump(flats, f, ensure_ascii=False, indent=2)
+
+print("flats.json создан")
