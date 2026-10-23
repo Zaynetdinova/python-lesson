@@ -1,0 +1,27 @@
+[
+  {
+    "complex": "ЖК Цветы",
+    "price": 5100000,
+    "area": 42.5
+  },
+  {
+    "complex": "ЖК Парк",
+    "price": 3900000,
+    "area": 31.0
+  },
+  {
+    "complex": "ЖК Le Cristall",
+    "price": 7000000,
+    "area": 27.0
+  },
+  {
+    "complex": "ЖК Premium",
+    "price": 8000000,
+    "area": 35.0
+  },
+  {
+    "complex": "ЖК Life",
+    "price": 3900000,
+    "area": 30.0
+  }
+]
