@@ -1,34 +1,56 @@
-import json
+# Урок 1: переменные, f-строки, ввод данных, условия
 
-flats = [
-    {"complex": "ЖК Цветы", "price": 5100000, "area": 42.5},
-    {"complex": "ЖК Парк", "price": 3900000, "area": 31.0},
-    {"complex": "ЖК Le Cristall", "price": 7000000, "area": 27.0},
-    {"complex": "ЖК Premium", "price": 8000000, "area": 35.0},
-    {"complex": "ЖК Life", "price": 3900000, "area": 30.0},
-]
+# --- Теория: переменные и типы ---
+name = "Ильмира"        # str, строка
+age = 27                # int, целое число
+price = 4500000.50      # float, дробное число
+is_available = True     # bool, True/False
 
-def price_per_m2(flat):
-    return flat["price"] / flat["area"]
+print(name)
+print(type(age))
 
-def find_cheaper(flats, limit):
-    result = []
-    for flat in flats:
-        if flat["price"] <= limit:
-            result.append(flat)
-    return result
+# --- Теория: f-строки ---
+area = 42.5
+total = 5100000
+price_per_m2 = total / area
 
-cheap = find_cheaper(flats, 3900000)
-for flat in cheap:
-    print(f"Дешевле 4 млн: {flat['complex']}, {flat['price']} ₽")
+print(f"Квартира {area} м², цена {total} ₽")
+print(f"Цена за м²: {price_per_m2:.0f} ₽")
 
-def find_expensive(flats, limit):
-    result = []
-    for flat in flats:
-        if flat["price"] > limit:
-            result.append(flat)
-    return result
+# --- Теория: арифметика ---
+print(10 + 3)    # 13
+print(10 - 3)    # 7
+print(10 * 3)    # 30
+print(10 / 3)    # 3.333...
+print(10 // 3)   # 3
+print(10 % 3)    # 1
+print(2 ** 5)    # 32
 
-expensive = find_expensive(flats, 3900000)
-for flat in expensive:
-    print(f"Дороже 3900000: {flat['complex']}, {flat['price']} ₽")
+
+# --- Задача 1. Визитка ---
+name = "Ильмира"
+city = "Уфа"
+purpose = "устроиться AI-автоматизатором"
+
+print(f"Меня зовут {name}, живу в городе {city}, моя цель: {purpose}")
+
+
+# --- Задача 2. Цена за м² ---
+price = int(input("Цена квартиры в рублях: "))
+area = float(input("Площадь в м²: "))
+
+price_per_m2 = price / area
+print(f"Цена за м²: {price_per_m2:.0f} ₽")
+
+
+# --- Задача 3. Ипотечный пре-чек ---
+price = int(input("Стоимость квартиры: "))
+down_payment = int(input("Первоначальный взнос: "))
+
+min_down_payment = price * 0.2
+
+if down_payment < min_down_payment:
+    print("Нужен больший первый взнос")
+else:
+    loan = price - down_payment
+    print(f"Сумма кредита: {loan} ₽")

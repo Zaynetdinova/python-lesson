@@ -1,7 +1,9 @@
+# Урок 4: первый запрос к API (курсы валют ЦБ РФ)
 import json
 import requests
 
 url = "https://www.cbr-xml-daily.ru/daily_json.js"
+
 response = requests.get(url, timeout=10)
 
 if response.status_code != 200:
@@ -23,7 +25,14 @@ print(f"Курс доллара: {usd:.2f} ₽")
 print(f"Курс евро: {eur:.2f} ₽")
 print(f"Курс юаня: {cny:.2f} ₽")
 
+# Сохраняем курсы в файл
 rates = {"USD": usd, "EUR": eur, "CNY": cny}
 
 with open("rates.json", "w", encoding="utf-8") as f:
     json.dump(rates, f, ensure_ascii=False, indent=2)
+
+# Читаем обратно и проверяем
+with open("rates.json", "r", encoding="utf-8") as f:
+    loaded = json.load(f)
+
+print(loaded["USD"])

@@ -1,12 +1,16 @@
-import requests
-
+# Урок 5: try/except и переменные окружения (.env)
 import os
+
+import requests
 from dotenv import load_dotenv
 
+# --- Секреты из .env ---
 load_dotenv()
-if os.getenv("MY_API_KEY") is None:
-    print("Ключ не найден в .env")
 
+if os.getenv("MY_API_KEY") is None:
+    print("Ключ MY_API_KEY не найден в .env")
+
+# --- Запрос с обработкой ошибок ---
 url = "https://www.cbr-xml-daily.ru/daily_json.js"
 
 try:
@@ -37,9 +41,9 @@ eur = get_rate(data, "EUR")
 cny = get_rate(data, "CNY")
 xxx = get_rate(data, "XXX")    # проверка несуществующей валюты
 
-if usd is not None: 
+if usd is not None:
     print(f"Курс доллара: {usd:.2f} ₽")
-if eur is not None: 
+if eur is not None:
     print(f"Курс евро: {eur:.2f} ₽")
-if cny is not None: 
+if cny is not None:
     print(f"Курс юаня: {cny:.2f} ₽")
