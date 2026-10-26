@@ -60,7 +60,7 @@ for _, row in selected.iterrows():
     arrow = "▲" if row["change_pct"] > 0 else "▼" if row["change_pct"] < 0 else "="
     lines.append(f"{row['CharCode']}: {row['rate']:.2f} ₽ {arrow} {row['change_pct']:+.2f}%")
 
-top = selected.iloc[0]    # таблица отсортирована по change_pct по убыванию
+top = selected.loc[selected["change_pct"].abs().idxmax()]  # таблица отсортирована по change_pct по убыванию
 lines.append("")
 lines.append(f"Больше всего выросла: {top['CharCode']} ({top['change_pct']:+.2f}%)")
 
