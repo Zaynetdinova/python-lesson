@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Анна",
+    "budget": 6000000,
+    "rooms": 1,
+    "urgency": "high"
+  },
+  {
+    "name": null,
+    "budget": null,
+    "rooms": 2,
+    "urgency": "low"
+  },
+  {
+    "name": "Тимур",
+    "budget": 4500000,
+    "rooms": 0,
+    "urgency": "low"
+  }
+]
