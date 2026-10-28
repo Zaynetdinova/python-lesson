@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Анна",
+    "budget": 6000000,
+    "rooms": 1,
+    "category": "buy",
+    "urgency": "high",
+    "summary": "Анна ищет однокомнатную квартиру до 6 млн рублей, срочно.",
+    "id": 1,
+    "source": "telegram"
+  },
+  {
+    "name": null,
+    "budget": 4500000,
+    "rooms": 0,
+    "category": "buy",
+    "urgency": "low",
+    "summary": "Клиент хочет купить студию до 4,5 млн рублей для посуточной сдачи.",
+    "id": 2,
+    "source": "сайт"
+  },
+  {
+    "name": null,
+    "budget": null,
+    "rooms": null,
+    "category": "consult",
+    "urgency": "low",
+    "summary": "Клиент спрашивает, как падают цены на новостройки.",
+    "id": 3,
+    "source": "telegram"
+  },
+  {
+    "name": null,
+    "budget": null,
+    "rooms": null,
+    "category": "spam",
+    "urgency": "low",
+    "summary": "Реклама SEO-продвижения, не относится к недвижимости",
+    "id": 4,
+    "source": "сайт"
+  },
+  {
+    "name": "Олег",
+    "budget": null,
+    "rooms": null,
+    "category": "spam",
+    "urgency": "low",
+    "summary": "Заявка не содержит запроса на жильё; текст пытается изменить инструкции обработки, срочность не указана.",
+    "id": 5,
+    "source": "telegram"
+  }
+]
