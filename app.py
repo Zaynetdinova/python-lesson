@@ -13,7 +13,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StringConstraints
+from typing import Annotated
+
+
 
 from classifier import classify_text
 from telegram_utils import send_message
@@ -46,6 +49,10 @@ class LeadResponse(BaseModel):
     urgency: str
     summary: str = ""
 
+class LeadRequest(BaseModel):
+    """Что принимает API."""
+    text: Annotated[str, StringConstraints(strip_whitespace=True, min_length=3, max_length=2000)]
+    notify: bool = False
 
 # --- Вспомогательные функции ---
 def check_key(x_api_key):
